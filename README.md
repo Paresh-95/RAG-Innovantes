@@ -192,29 +192,6 @@ The application will be available at:
 - Assumes English documents; may have issues with other languages
 - **Mitigation**: Add language detection and support for non-English content
 
-### 6. **Error Recovery**
-- No automatic retry mechanism for Gemini API failures
-- **Mitigation**: Implement exponential backoff and circuit breaker pattern
-
-### 7. **Question Context Limitations**
-- Each question is processed independently
-- **Limitation**: Cannot maintain conversation history or multi-turn context
-- **Mitigation**: Add session management and conversation history storage
-
-### 8. **Security Considerations**
-- API keys stored in `.env` file (not version controlled)
-- No authentication/authorization for API endpoints
-- **Mitigation**: Add API key validation, JWT authentication, and input sanitization for production
-
-### 9. **Search Quality**
-- Fixed to 4 similarity search results per question
-- May not be optimal for all document types
-- **Mitigation**: Make configurable based on document characteristics
-
-### 10. **Cold Start Performance**
-- First API call to Gemini may be slow due to cold start
-- **Mitigation**: Implement connection pooling and keep-alive mechanisms
-
 ---
 
 ## Technology Stack
@@ -238,28 +215,3 @@ The application will be available at:
 - **Rate Limiter**: API protection
 
 ---
-
-## Future Enhancements
-
-- [ ] Persistent vector database integration
-- [ ] Multi-turn conversation support
-- [ ] Document management and deletion
-- [ ] User authentication and authorization
-- [ ] Advanced search filters and sorting
-- [ ] Multiple language support
-- [ ] Document metadata extraction
-- [ ] Answer source attribution
-- [ ] Web scraping support alongside PDFs
-- [ ] Configurable LLM model selection
-
----
-
-## Support and Contribution
-
-For issues, feature requests, or contributions, please create an issue or pull request in the repository.
-
----
-
-## License
-
-This project is provided as-is for educational purposes.
